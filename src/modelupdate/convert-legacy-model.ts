@@ -422,7 +422,7 @@ export function runConvertModel(...args: string[]) {
 
     try {
         const files = glob.sync(args[0]);
-
+        console.log(files)
         for(let file of files) {
             try {
                 console.log("\n\nConverting", file);
@@ -436,13 +436,9 @@ export function runConvertModel(...args: string[]) {
             }
 
         }
-
-
     } catch(e) {
         console.error("Error finding files", e)
     }
-
-
     return 0;
 }
 

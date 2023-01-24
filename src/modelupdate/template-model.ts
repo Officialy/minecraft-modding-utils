@@ -5,19 +5,29 @@ export function modelTemplate(props: {fileName: string, baseParts: NewParts, tex
 
     return `package setme;
 
-import com.sekwah.sekclib.util.ModelUtils;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
+package reika.rotarycraft.models.engine;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import reika.rotarycraft.base.RotaryModelBase;
+import java.util.ArrayList;
 
-public class ${props.fileName}<T extends LivingEntity> extends HumanoidModel<T>
+import static reika.rotarycraft.RotaryCraft.MODID;
+
+public class ${props.fileName} extends RotaryModel<T>
 {
     
-    // public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MODID, "changeme"), "main");
+    public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation(MODID, "changeme");
 
     public ${props.fileName}(ModelPart modelPart) {
         super(modelPart);

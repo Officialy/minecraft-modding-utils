@@ -1,6 +1,4 @@
 import {runConvertModel} from "./modelupdate/convert-legacy-model";
-import {runFlipZ} from "./bbflipz/bbflipz";
-
 
 const args = process.argv;
 args.splice(0,2);
@@ -8,8 +6,7 @@ args.splice(0,2);
 const commands: {
     [prop: string]: ((...args: string[]) => number) | undefined;
 } = {
-    updatemodel: runConvertModel,
-    bbflipz: runFlipZ,
+    updatemodel: runConvertModel
 };
 
 function run() {
